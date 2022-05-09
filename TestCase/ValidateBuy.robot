@@ -1,5 +1,5 @@
 *** Settings ***
-Resource            ../resource/MainPageKeywords.robot
+Resource            ../resource/HomePageKeywords.robot
 Resource            ../resource/CommonsPageKeywords.robot
 Resource             ../resource/ProductsPageKeywords.robot
 

@@ -1,5 +1,5 @@
 *** Settings ***
-Variables  ../Locators/MainPage.py
+Variables  ../Locators/HomePage.py
 
 *** Keywords ***
 #Condicoes
