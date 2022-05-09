@@ -1,0 +1,8 @@
+title = 'div[class="css-17wq47a-content"] h2[class="css-zj9thr-howItWorksTitle"]'
+address_fake_search= 'input[id="fake-address-search-input"]'
+address_search='input[id="address-search-input-address"]'
+google_search_address = 'li[itemid="google-address"]'
+address_not_found = 'div[class="css-1ce056c-container"]>section[id="address-not-found"]>p[class="css-wc4tpc-text"]'
+adress_number = 'input[id="address-details-input-number"]'
+radio_button_complemento = 'input[name="withoutComplement"]'
+bt_continue = 'button[id="address-details-button-continue"]'
