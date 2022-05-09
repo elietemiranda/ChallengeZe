@@ -1,4 +1,4 @@
-title = 'div[class="css-17wq47a-content"] h2[class="css-zj9thr-howItWorksTitle"]'
+txt_title = 'div[class="css-17wq47a-content"] h2[class="css-zj9thr-howItWorksTitle"]'
 address_fake_search= 'input[id="fake-address-search-input"]'
 address_search='input[id="address-search-input-address"]'
 google_search_address = 'li[itemid="google-address"]'
