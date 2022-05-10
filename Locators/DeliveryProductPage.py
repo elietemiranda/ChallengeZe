@@ -1,0 +1,8 @@
+BTN_SELECT_MORE_ITENS = 'div[id="plus-button"]'
+BTN_SELECT_LESS_ITENS = 'div[id="minus-button"]'
+CLICK_BAG= 'div[id="bag-pre-checkout"]'
+BTN_ADD_PRODUCT = 'button[id="add-product"]'
+TXT_AMOUNT_PRODUCT = 'div[id="total-qty-products"]'
+TXT_TITLE_BAG = 'aside[id="aside"] div[class="css-hn36kp-title"]'
+PAGE_BAG = 'div[class="css-1au4ba9-backdropShadow enter-done"]'
+MSG_MINIMUM_VALUE = 'div[class="css-6y6jxv-minimumOrderValueBarText"]'
