@@ -1,4 +1,4 @@
 *** Keywords ***
-Acessar site do zé delivery
+Abrir o navegador
     New Browser  headless=false  browser=Chromium
-    New Page    https://www.ze.delivery/
+
