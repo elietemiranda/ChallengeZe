@@ -1,11 +1,14 @@
 *** Settings ***
 Variables  ../Locators/HomePage.py
 
+*** Variables ***
+${URL_HOME_PAGE}   https://www.ze.delivery
+
 *** Keywords ***
 #Condicoes
-Dado que a pagina inicial contenha o texto
-    [ARGUMENTS]  ${title}
-    New Page    https://www.ze.delivery/
+Acessar pagina inicial
+    Set Local Variable   ${title}  Como funciona o Zé Delivery?
+    New page     ${URL_HOME_PAGE}
     Get Text    ${TXT_HOW_IT_WORKS_TITLE}  ==  ${title}
 
 E que tenha preenchido uma região atendida pelo o Zé
