@@ -22,8 +22,8 @@ Então é exibido a quantidade de itens da skol
 
 Então é exibido a mensagem
     [ARGUMENTS]  ${msg}
-    Get Text  ${MSG_MINIMUM_VALUE}  *=  ${msg}
-    Take screen shot  teseleo.png
+    Get Text  ${MSG_MINIMUM_VALUE}  ==  ${msg}
+    Take screen shot  result-test.png
 
 #Métodos
 Search products
