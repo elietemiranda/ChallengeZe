@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-
     - name: Install Python
       env:
         PYTHON_VERSION: "3.10"
@@ -36,37 +35,8 @@ jobs:
       run: |
             mkdir results
             robot -d ./results ./TestCase/ValidateBuy.robot
-
-  generate_report:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download reports
-        uses: actions/download-artifact@v1
-        with:
-          name: reports
-
-#      - name: Send report to commit
-#        uses: joonvena/robotframework-reporter-action@v2
-#        with:
-#          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-
-#    - name: Show results
-#      uses: joonvena/robotframework-reporter-action@v2
-#      run: |
-#           cat /home/runner/work/ChallengeZe/ChallengeZe/results/report.html
-
-#    - name: Terraform init
-#      env:
-#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#      run: terraform init -input=false
-#
-#    - name: Terraform validation
-#      run: terraform validate
-#
-#    - name: Terraform apply
-#      env:
-#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#      run: terraform apply -auto-approve -input=false
+    - uses: actions/checkout@v2
+    - name: Download reports
+      uses: actions/download-artifact@v1
+      with:
+        name: reports
