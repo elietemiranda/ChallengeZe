@@ -1,8 +1,8 @@
 *** Settings ***
-Resource            Resource/HomePageKeywords.robot
-Resource            Resource/CommonsPageKeywords.robot
-Resource            Resource/ProductsPageKeywords.robot
-Resource            Resource/DeliveryProductPageKeywords.robot
+Resource            ../Resource/HomePageKeywords.robot
+Resource            ../Resource/CommonsPageKeywords.robot
+Resource            ../Resource/ProductsPageKeywords.robot
+Resource            ../Resource/DeliveryProductPageKeywords.robot
 
 Library             Browser
 
