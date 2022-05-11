@@ -28,9 +28,14 @@ jobs:
 
     - name: Install libarys
       run: |
+          pip install -U pip
+          pip install -r requirements.txt
+          python -m Browser.entry init
+
+    - name: Run test
+      run: |
             mkdir results
             robot -d ./results ./TestCase/ValidateBuy.robot
-
 
 
 
