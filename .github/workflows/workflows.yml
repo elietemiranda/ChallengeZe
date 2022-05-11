@@ -34,7 +34,7 @@ jobs:
     - name: Run tests
       run: |
             mkdir results
-            robot -d ./results ./TestCase/ValidateBuy.robot
+            robot -d ./reports ./TestCase/ValidateBuy.robot
     - uses: actions/checkout@v2
     - name: Download reports
       uses: actions/download-artifact@v1
