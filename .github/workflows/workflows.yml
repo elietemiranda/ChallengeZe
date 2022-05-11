@@ -14,14 +14,18 @@ jobs:
       run: |
         py_version=$PYTHON_VERSION
         sudo apt update
-        sudo apt install python3.8
         sudo apt install software-properties-common
         sudo add-apt-repository -y ppa:deadsnakes/ppa
         sudo apt update
         sudo apt install python"$py_version"
+        sudo apt install -y nodejs
 
     - name: Verify Python Version
-      run: python --version
+      run: |
+          python --version
+          nodejs -v
+          ls
+
 
 #    - name: Terraform init
 #      env:
