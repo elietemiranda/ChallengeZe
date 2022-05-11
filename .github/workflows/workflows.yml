@@ -40,4 +40,4 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         path: reports
-        name: output.xml
+        name: output
