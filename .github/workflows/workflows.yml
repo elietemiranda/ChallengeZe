@@ -10,7 +10,7 @@ jobs:
 
     - name: Install Python
       env:
-        PYTHON_VERSION: "3.10.2"
+        PYTHON_VERSION: "3.10"
       run: |
         py_version=$PYTHON_VERSION
         sudo apt update
