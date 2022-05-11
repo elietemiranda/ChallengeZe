@@ -3,7 +3,7 @@ name: Test With Robot Framework
 on: [push]
 
 jobs:
-  terraform_apply:
+  install_dependencies:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -24,7 +24,13 @@ jobs:
       run: |
           python --version
           nodejs -v
-          ls
+          npm --version
+
+    - name: Install libarys
+      run: |
+          pip install -U pip
+          pip install -r requirements.txt
+
 
 
 #    - name: Terraform init
