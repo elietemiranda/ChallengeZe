@@ -41,16 +41,16 @@ jobs:
             mkdir results
             robot -d ./reports ./TestCase
 
-    - name: Upload Tests
+    - name: Upload Tests in AWS
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        OUTPUT_PATH: "/home/runner/work/ChallengeZe/ChallengeZe/reports/output.xml"
+        OUTPUT_PATH: "/home/runner/work/ChallengeZe/ChallengeZe/reports"
       run: |
             aws s3 ls --region sa-east-1
             git_hash=$(git rev-parse --short "$GITHUB_SHA")
             echo $git_hash
             bucket=reports-challenge-ze
-            aws s3 cp $OUTPUT_PATH s3://"$bucket"/output_"$git_hash".xml --region sa-east-1
+            aws s3 cp $OUTPUT_PATH s3://"$bucket"/"$git_hash"/ --recursive --region sa-east-1
 #            mkdir results
 #            robot -d ./reports ./TestCase
