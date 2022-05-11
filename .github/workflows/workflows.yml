@@ -3,7 +3,7 @@ name: Test With Robot Framework
 on: [push]
 
 jobs:
-  install_dependencies:
+  run_automation:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
