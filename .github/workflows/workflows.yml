@@ -38,5 +38,3 @@ jobs:
     - uses: actions/checkout@v2
     - name: Download reports
       uses: actions/download-artifact@v1
-      with:
-        name: reports
