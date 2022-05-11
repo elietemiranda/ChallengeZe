@@ -32,12 +32,29 @@ jobs:
           pip install -r requirements.txt
           python -m Browser.entry init
 
-    - name: Run test
+    - name: Run tests
       run: |
             mkdir results
             robot -d ./results ./TestCase/ValidateBuy.robot
 
+  generate_report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download reports
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
 
+#      - name: Send report to commit
+#        uses: joonvena/robotframework-reporter-action@v2
+#        with:
+#          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+#    - name: Show results
+#      uses: joonvena/robotframework-reporter-action@v2
+#      run: |
+#           cat /home/runner/work/ChallengeZe/ChallengeZe/results/report.html
 
 #    - name: Terraform init
 #      env:

@@ -1,6 +1,6 @@
 *** Settings ***
 Variables  ../Locators/ProductsPage.py
-Resource   ../resource/HomePageKeywords.robot
+Resource   ../Resource/HomePageKeywords.robot
 
 *** Variables ***
 ${URL}   https://www.ze.delivery/produtos

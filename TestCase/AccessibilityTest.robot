@@ -1,6 +1,6 @@
 *** Settings ***
-Resource        ../resource/AccessibilityKeywords.robot
-Resource        ../resource/CommonsPageKeywords.robot
+Resource        ../Resource/AccessibilityKeywords.robot
+Resource        ../Resource/CommonsPageKeywords.robot
 
 Library         SeleniumLibrary
 Library         AxeLibrary

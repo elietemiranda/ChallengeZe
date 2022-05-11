@@ -1,6 +1,6 @@
 *** Settings ***
 Variables  ../Locators/DeliveryProductPage.py
-Resource   ../resource/HomePageKeywords.robot
+Resource   ../Resource/HomePageKeywords.robot
 
 *** Keywords ***
 #Condicao
