@@ -1,15 +1,39 @@
-on:
-  push:
-    branches:
-      - main
-      - feat/*
-name: 🚀 Deploy website on push
+name: Test With Robot Framework
+
+on: [push]
+
 jobs:
-  robot_test:
+  terraform_apply:
     runs-on: ubuntu-latest
-    name: Run Robot Framework Tests
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
+    - uses: actions/checkout@v1
+
+    - name: Install Python
+      env:
+        PYTHON_VERSION: "3.10.2"
+      run: |
+        py_version=$PYTHON_VERSION
+        sudo apt update
+        sudo apt install python3.8
+        sudo apt install software-properties-common
+        sudo add-apt-repository -y ppa:deadsnakes/ppa
+        sudo apt update
+        sudo apt install python"$py_version"
+
+    - name: Verify Python Version
+      run: python --version
+
+#    - name: Terraform init
+#      env:
+#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      run: terraform init -input=false
+#
+#    - name: Terraform validation
+#      run: terraform validate
+#
+#    - name: Terraform apply
+#      env:
+#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      run: terraform apply -auto-approve -input=false
