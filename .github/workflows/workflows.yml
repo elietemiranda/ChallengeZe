@@ -23,6 +23,14 @@ jobs:
 #        unzip awscliv2.zip
 #        sudo ./aws/install
 
+    - name: Upload Tests
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      run: |
+            aws s3 ls --region sa-east-1
+
     - name: Verify Version
       run: |
           python --version
@@ -41,12 +49,6 @@ jobs:
             mkdir results
             robot -d ./reports ./TestCase
 
-    - name: Upload Tests
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      run: |
-            aws s3 ls
 #            mkdir results
 #            robot -d ./reports ./TestCase
