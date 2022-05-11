@@ -3,11 +3,11 @@ name: Test With Robot Framework
 on: [push]
 
 jobs:
-  install_dependencies:
+  run_automation:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Install Python
+    - name: Install Python and Node
       env:
         PYTHON_VERSION: "3.10"
       run: |
@@ -25,18 +25,13 @@ jobs:
           nodejs -v
           npm --version
 
-    - name: Install libarys
+    - name: Install libarys python
       run: |
           pip install -U pip
           pip install -r requirements.txt
           python -m Browser.entry init
 
-    - name: Run tests
+    - name: Run testss
       run: |
             mkdir results
-            robot -d ./reports ./TestCase/ValidateBuy.robot
-    - uses: actions/checkout@v2
-    - name: Download reports
-      uses: actions/download-artifact@v1
-      with:
-        name: reports
+            robot -d ./reports ./TestCase
