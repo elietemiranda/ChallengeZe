@@ -39,7 +39,8 @@ e ter algum problema na hora de criar sua conta, ele pode desistir de abrir uma 
 ### Explicacao sobre a estrutura do projeto
 O projeto foi desenvolvido com Robot Framework utilizando a library da brownser para automação dos fluxos críticos do Zé e para automação da validação de acessbilidade foi utilizado o Robot com Selenium e a library AxesLibrary.
 
-###Estrutura dos testes
+#### Estrutura dos testes
+
     ├── .github                   
         ├── gitflows                            # Diretório de arquivos para rodar a pipeline
     ├── Locators                                # Diretório para armazenar os elementos buscado na tela
@@ -49,7 +50,7 @@ O projeto foi desenvolvido com Robot Framework utilizando a library da brownser 
         ├── ValidateBuy.robot                   # Test Case para valdiar o fluxo de compra na pagina
     └── README.md                               # Documentação do projeto
 
-###Por quê utilizar o Robot Framework?
+### Por quê utilizar o Robot Framework?
 Durante algumas techs apresentadas pelo o Zé delivery notei que é utilizado muito desenvolvimento com python então resolvi trazer um viés de utilizarmos um framework mais próximo dessa linguagem,
 com isso pensei no robot. <br>
 Utilizo muito o robot no meu dia a dia e vejo que ele é um framework muito fácil de automatizar! E além dessa facilidade ele pode ser utilizado em 
@@ -58,21 +59,21 @@ diversas camadas, como em backend, frontend e APPs!
 
 ### 1. Fluxos Críticos
 
-####I - Endereço
+#### I - Endereço
 A validação de endereço ja aparece no home page do zé, vejo que é um fluxo importante pois é uma etapa onde o usuário vai saber 
 se a região que ele esta localizado é atendida pelo o zé.
 Se o usuário soubesse que a região que ele esta localizado não é atendida pelo o zé somente no final da compra,
 iria gerar uma péssima experiência para o usuário que esta tendo o primeiro contato na plataforma.
 
-####II - Proibição de vendas de bebidas alcoólicas para menores de idade
+#### II - Proibição de vendas de bebidas alcoólicas para menores de idade
 Uma etapa bem importante, pois já mostra antes de qualquer compra que o Zé delivery não vende bebida para menores de idade, 
 já imaginou termos um problema judicial caso não tivesse essa validação e informação na plataforma? 
 
-####III - Sacola de compras
+#### III - Sacola de compras
 Uma etapa super importante, pois é aonde o usuário consegue montar a sua sacola com todos os produtos que ele optou pela compra, 
 então vejo que é uma das funcionalidades mais importante na jornada de compras do Zé
 
-####IV - Acessibilidade
+#### IV - Acessibilidade
 Coloquei um cenário bônus pois vejo que essa funcionalidade deveria ser muito pertinente nos aplicativos hoje em dia 
 e visto que o Zé apoia ter um mundo mais acessível, por que não vermos o quanto nosso aplicativo é acessível para um portador 
 de deficiência? Afinal, a boa experiência que o zé quer passar deve ser para todos.
