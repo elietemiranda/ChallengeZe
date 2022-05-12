@@ -22,8 +22,9 @@ Em nossa [Aplicação da Web](https://www.ze.delivery/), crie uma suite de teste
 
 
 
-
-### Planejamento do projeto
+<h1 align="center">
+Planejamento do projeto
+</h1>
 Antes de criar qualquer tipo de automação iniciei o planejamento do projeto como se realmente fosse uma equipe trabalhando para desenvolver
 uma história e com isso, criei uma história no jira utilizando as boas práticas do BDD e ATDD.
 
@@ -35,8 +36,9 @@ então por isso pensei em criar uma história para atendermos um denominado flux
 Um dos fluxos que vejo como critico é a tela de cadastro, pois se o usuário tiver que preencher muitas informações 
 e ter algum problema na hora de criar sua conta, ele pode desistir de abrir uma conta no Zé.
 
-
-### Explicacao sobre a estrutura do projeto
+<h1 align="center">
+Explicacao sobre a estrutura do projeto
+</h1>
 O projeto foi desenvolvido com Robot Framework utilizando a library da brownser para automação dos fluxos críticos do Zé e para automação da validação de acessbilidade foi utilizado o Robot com Selenium e a library AxesLibrary.
 
 #### Estrutura dos testes
@@ -56,8 +58,9 @@ com isso pensei no robot. <br>
 Utilizo muito o robot no meu dia a dia e vejo que ele é um framework muito fácil de automatizar! E além dessa facilidade ele pode ser utilizado em 
 diversas camadas, como em backend, frontend e APPs!
 
-
-### 1. Fluxos Críticos
+<h1 align="center">
+1. Fluxos Críticos
+</h1>
 
 #### I - Endereço
 A validação de endereço ja aparece no home page do zé, vejo que é um fluxo importante pois é uma etapa onde o usuário vai saber 
@@ -107,3 +110,33 @@ webdrivermanager firefox chrome --linkpath /usr/local/bin
 ```
 robot -d ./results .\TestCase
 ```
+<h1 align="center">
+Execução no terminal
+</h1>
+
+![Terminal](https://user-images.githubusercontent.com/35806393/167971452-351b9e68-a51b-4b70-9868-d7bf687e3508.png)
+
+<h1 align="center">
+Execução no actions
+</h1>
+
+![22-30-42](https://user-images.githubusercontent.com/35806393/167974093-d1404652-9222-454a-b6d3-2e673844a63d.gif)
+
+<h1 align="center">
+Testes Web
+</h1>
+
+![22-09-10](https://user-images.githubusercontent.com/35806393/167972156-342d0508-7e08-4f9b-bc47-eec415dce253.gif)
+
+<h1 align="center">
+Reports no Bucket S3
+</h1>
+
+![22-23-38](https://user-images.githubusercontent.com/35806393/167973398-e96b5b84-97a0-467f-aa2b-809b2fd99384.gif)
+
+
+<h1 align="center">
+Ponto de atenção
+</h1>
+
+Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real.
