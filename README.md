@@ -26,15 +26,85 @@ Em nossa [Aplicação da Web](https://www.ze.delivery/), crie uma suite de teste
 Planejamento do projeto
 </h1>
 Antes de criar qualquer tipo de automação iniciei o planejamento do projeto como se realmente fosse uma equipe trabalhando para desenvolver
-uma história e com isso, criei uma história no jira utilizando as boas práticas do BDD e ATDD.
+uma história e com isso, criei uma história utilizando as boas práticas do BDD e ATDD.
 
-Para ter acesso a história será necessário me passar o e-mail, pois criei a história no meu jira
-[Ir para a Historia do Usuario](https://leoteste.atlassian.net/browse/CHAL-2)
 
 Obs: Notei que todo o fluxo que o usuario passa na plataforme tem uma certa criticidade, 
 então por isso pensei em criar uma história para atendermos um denominado fluxo.<br>
 Um dos fluxos que vejo como critico é a tela de cadastro, pois se o usuário tiver que preencher muitas informações 
 e ter algum problema na hora de criar sua conta, ele pode desistir de abrir uma conta no Zé.
+
+
+<h1 align="center">
+História do Usuario
+</h1>
+
+**Narrativa do usuario**
+
+Eu como usuário do Zé <br>
+Gostaria de montar uma sacola de compras <br>
+Para ter a opção de montar uma lista antes de finalizar minha compra <br>
+
+### DOR - Definition Of Ready
+
+Negócio - Documentação da história de usuário pronta ✔<br>
+Negócio - Regras de negócio da história definido/atualizado ✔<br>
+Negócio - Critérios de aceites do PO iniciado/atualizado ✔<br>
+
+Devs - Refinamento de negócio finalizado ✔ <br>
+Devs - Readme finalizado/atualizado ✔ <br>
+Devs - Contrato da API finalizado/atualizado ✔<br>
+
+QA - Planejamento/Criacao de Cenários criado e atualizado ✔<br>
+QA  - Testes de acessibilidade passado com sucesso ✔ <br>
+QA - Ambiente de Homolog e rota do gateway atualizado ✔ <br>
+
+
+### DOD - Definition Of Done
+
+Devs-  Funcionalidade atendendo as regras de negócio do PO ✔ <br>
+Devs- Funcionalidade atendendo os critério de aceites ✔ <br>
+QA-    Todos os critérios de aceite executados com sucesso <br>
+PO-    Funcionalidade atendendo os critérios de aceites e as regras de negócio implantado em produção <br>
+
+### Documentação de Negócios:
+Conforme a narrativa do usuario, sera criado um carrinho enquanto que de a opção do usuario ir enchendo enquanto ele seleciona seus itens na tela de produtos.  Mas antes do usuario selecionar os itens será necessário fazermos as seguintes validações:  
+
+- Dar a opção para o usuario informar sua localização para saber se o Zé atende na região dele  
+- Ter um modal que pergunta se o usuário é maior de 18 anos, caso ele não seja, deverá ser mostrado um descritivo que o Zé não vende bebida alcoólicas para menor de idade, caso ele seja de maior encaminhamos ele para a pagina dos produtos  
+- Ter um item de carrinho que quando o cliente clicar mostre todos os itens que ele selecionou até agora
+- O valor mínimo para o usuario efetuar a compra é de 15,00
+
+### Critérios de aceite:
+
+**Cenario 1 - Validar se o zé trás uma mensagem para uma região que não é atendida** <br>
+    Dado que acesso a pagina inicial <br>
+    Quando o usuario informa o cep  07700210 <br>
+    Então o usuario recebe a seguinte mensagem  Ops! Não encontramos seu endereço... <br>
+
+**Cenario 2 - Validar se o zé trás o informativo para menores de idade** <br>
+    Dado que acesso a pagina inicial <br>
+    E que tenha preenchido uma região atendida pelo o Zé  13219071  300 <br>
+    E que tenha clicado no botao "ver produtos disponíveis" <br>
+    Quando o usuario informa que é menor de idade <br>
+    Então é retornado a seguinte mensagem  Você precisa ter 18 anos ou mais para consumir bebidas alcoólicas. <br>
+
+**Cenario 3 - Validar se a sacola mostra a quantidade de itens que o usuario inseriu** <br>
+     Dado que eu esteja na tela de produtos <br>
+     E que tenha selecionado uma quantidade de itens na sacola  skol  7 <br>
+     Quando abre a sacola <br>
+     Então é exibido a quantidade de itens da skol <br>
+
+**Cenario 4 - Validar se é informado a mensagem que o usuario ainda não inseriu o valor mínimo** <br>
+    Dado que eu esteja na tela de produtos <br>
+    E que tenha selecionado uma quantidade de itens na sacola  skol  2 <br>
+    Quando abre a sacola <br>
+    Então é exibido a mensagem  Faltam R$ 10,22 para o valor mínimo do pedido <br>
+
+**Cenario 5 - Validar se a pagina do zé delivery esta no padrão de acessibilidade** <br>
+    Dado que eu esteja na tela inicial <br>
+    Quando eu executo a validação de acessibilidade <br>
+    Então é retornado o resultado da violação <br>
 
 <h1 align="center">
 Explicacao sobre a estrutura do projeto
@@ -140,3 +210,4 @@ Ponto de atenção
 </h1>
 
 Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real.
+
