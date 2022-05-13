@@ -37,10 +37,11 @@ Fill Region
     [ARGUMENTS]  ${cep}
     Click  ${INPUT_ADDRESS_FAKE_SEARCH}
     Fill Text  ${INPUT_ADDRESS_SEARCH}  ${cep}
-    Wait For Elements State  ${TXT_GOOGLE_ADDRESS}
-    Click  ${TXT_GOOGLE_ADDRESS}
+
 
 Search Region
     [ARGUMENTS]  ${address_number}
+    Wait For Elements State  ${TXT_GOOGLE_ADDRESS}
+    Click  ${TXT_GOOGLE_ADDRESS}
     Wait For Elements State   ${address_number}
     Click  ${address_number}
