@@ -209,5 +209,8 @@ Reports no Bucket S3
 Ponto de atenção
 </h1>
 
-Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real.
+Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real. Por exemplo, ao tentar executar as 10h da manhã já não é possível pois não tem nenhum distribuidor atendendo nesse horário.
+
+![image](https://user-images.githubusercontent.com/35806393/168289073-c87eb286-8074-45b9-8cd2-79a48b7b9776.png)
+
 
