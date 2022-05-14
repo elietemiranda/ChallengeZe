@@ -38,6 +38,7 @@ jobs:
             robot -d ./reports ./TestCase
 
     - name: Upload Tests in Bucket S3 AWS
+      if: ${{ always() }}
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
