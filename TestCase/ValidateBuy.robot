@@ -36,11 +36,3 @@ Cenario 4 - Validar se é informado a mensagem que o usuario ainda não inseriu 
     E que tenha selecionado uma quantidade de itens na sacola  skol  2
     Quando abre a sacola
     Então é exibido a mensagem  Faltam R$ 10,22 para o valor mínimo do pedido
-
-Cenario 5 - Validar se é informado a mensagem que o usuario ainda não inseriu o valor mínimo
-    [tags]  fail
-    [Documentation]    Forçando retornar um erro para termos um FAIL no relatório, para validar se segue para o stage de "Upload Tests in Bucket S3 AWS" mesmo dando erro
-    Dado que eu esteja na tela de produtos
-    E que tenha selecionado uma quantidade de itens na sacola  skol  2
-    Quando abre a sacola
-    Então é exibido a mensagem  Faltam R$ 23,22 para o valor mínimo do pedido
