@@ -8,6 +8,6 @@ Suite Setup     Abrir navegador na pagina do zé
 
 *** Test Cases ***
 Cenario 1 - Validar se a pagina do zé delivery esta no padrão de acessibilidade
+    [tags]  accessibility
     Quando eu executo a validação de acessibilidade
     Então é retornado o resultado da violação
-

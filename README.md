@@ -2,7 +2,8 @@
     Zé Delivery Code Challenge
 </h1>
 
-## Sobre o Desafio
+
+### Sobre o Desafio
 
 Não queremos que os nossos clientes tenham problemas e bugs ao utilizar a nossa plataforma Zé Delivery. Principalmente nesse momento super importante, que é quando ele escolhe uma cerveja gelada para degustar na hora.
  
@@ -157,29 +158,55 @@ a cada PUSH que fazemos no nosso repo, para rodar o projeto no github é só rod
 
 A nossa pipeline se integra com a AWS para armazenar o resultado do testes em um Bucket S3!
 
-### Configurando o projeto na sua máquina Windows
-Para rodar o projeto na sua máquina será necessário ter as seguintes depedências:
+<h1 align="center">
+Configurando o projeto na sua máquina Windows
+</h1>
+
+### Para rodar o projeto na sua máquina será necessário ter as seguintes depedências:
 
 - Ter uma IDE de sua preferência
-- Python instalado: [Site de instalacao do python](https://www.python.org/downloads/)
+- Instalar o Python: [Site de instalacao do python](https://www.python.org/downloads/)
+- Instalar o node.js https://nodejs.org/en/download/
 
-> Copie o projeto
+
+> Clone o projeto
 ```
 git clone https://github.com/leonardodossantos2012/ChallengeZe.git
 ```
 
-> Instalar as dependencia do robot no seu terminal
+> Instale as dependencia do robot no seu terminal
 ```
 cd C:\{PATH}\ChallengeZe
 pip3 install -r .\requirements.txt
+rfbrowser init
 webdrivermanager firefox chrome --linkpath /usr/local/bin
 ```
 
-### Executando o projeto
-> Acessar a pasta do projeto e executar o comando no seu terminal
+<h1 align="center">
+Executando o projeto
+</h1>
+
+Acessar a pasta do projeto e executar via CMD um comando de sua preferência:
+
+> Execução de todos os test case
 ```
 robot -d ./results .\TestCase
 ```
+
+> Execução por tags, somente dos cenários [smoke]
+```
+robot -d ./results -i smoke .\TestCase\
+```
+
+> Execução por tags, somente dos cenários [regression]
+```
+robot -d ./results -i regression .\TestCase\
+```
+> Execução por tags, somente dos cenários [accessibility]
+```
+robot -d ./results -i accessibility .\TestCase\
+```
+
 <h1 align="center">
 Execução no terminal
 </h1>
@@ -209,7 +236,7 @@ Reports no Bucket S3
 Ponto de atenção
 </h1>
 
-Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real. Por exemplo, ao tentar executar as 10h da manhã já não é possível pois não tem nenhum distribuidor atendendo nesse horário.
+Dependendo do horário da execução pode ser que a região selecionada não esteja em funcionamento e com isso não é possível fazer as validações da sacola, pois estamos validando um produto em uma URL de produção e em tempo real. Por exemplo, ao tentar executar as 10h da manhã já não é possível pois não tem nenhum distribuidor atendendo nesse horário. Os testes estão sendo feito na região de Jundiaí e como informando na imagem abaixo o horário que os fornecedores estão abertos é entre 11h e 23h59
 
 ![image](https://user-images.githubusercontent.com/35806393/168289073-c87eb286-8074-45b9-8cd2-79a48b7b9776.png)
 
