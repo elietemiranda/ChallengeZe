@@ -22,7 +22,6 @@ ii. Forneça uma explicação detalhada de por que esses fluxos são importantes
 Em nossa [Aplicação da Web](https://www.ze.delivery/), crie uma suite de testes de automação para um cenário da parte 1 do desafio de código (escolha um dos 3 fluxos que você criou em `1. Identifique os fluxos críticos`).
 
 
-
 <h1 align="center">
 Planejamento do projeto
 </h1>
@@ -110,7 +109,7 @@ Conforme a narrativa do usuario, sera criado um carrinho enquanto que de a opç�
 <h1 align="center">
 Explicacao sobre a estrutura do projeto
 </h1>
-O projeto foi desenvolvido com Robot Framework utilizando a library da brownser para automação dos fluxos críticos do Zé e para automação da validação de acessbilidade foi utilizado o Robot com Selenium e a library AxesLibrary.
+O projeto foi desenvolvido com Robot Framework utilizando a library da browser para automação dos fluxos críticos do Zé e para automação da validação de acessbilidade foi utilizado o Robot com Selenium e a library AxesLibrary.
 
 #### Estrutura dos testes
 
@@ -122,6 +121,12 @@ O projeto foi desenvolvido com Robot Framework utilizando a library da brownser 
         ├── AccessibilityTest.robot             # Validação dos testes de acessibilidade para saber o quanto nossa pagina é acessível
         ├── ValidateBuy.robot                   # Test Case para valdiar o fluxo de compra na pagina
     └── README.md                               # Documentação do projeto
+    
+
+### Desenho da arquitetura de solução do projeto
+
+![image](https://user-images.githubusercontent.com/35806393/168449583-b7f39081-5c07-478f-b090-ae72ed8d52ff.png)
+
 
 ### Por quê utilizar o Robot Framework?
 Durante algumas techs apresentadas pelo o Zé delivery notei que é utilizado muito desenvolvimento com python então resolvi trazer um viés de utilizarmos um framework mais próximo dessa linguagem,
@@ -159,32 +164,24 @@ a cada PUSH que fazemos no nosso repo, para rodar o projeto no github é só rod
 A nossa pipeline se integra com a AWS para armazenar o resultado do testes em um Bucket S3!
 
 <h1 align="center">
-Configurando o projeto na sua máquina Windows
+Configurando o projeto na sua máquina
 </h1>
 
-### Para rodar o projeto na sua máquina será necessário ter as seguintes depedências:
+### Instalação das dependências para rodar o projeto local
 
 - Ter uma IDE de sua preferência
-- Instalar o Python: [Site de instalacao do python](https://www.python.org/downloads/)
-- Instalar o node.js https://nodejs.org/en/download/
+- Instalar o Selenium Library para rodar o teste AccessibilityTest.robot: [Documentação oficial de como instalar](https://github.com/robotframework/SeleniumLibrary/)
+- Instalar o Axes Library para rodar executar as validações de acessibilidade: [Documentação oficial de como instalar](https://github.com/adiralashiva8/robotframework-axelibrary)
+- Instalar a library da browser para rodar o teste ValidateBuy.robot:  [Documentação oficial de como instalar](https://github.com/MarketSquare/robotframework-browser)
 
+<h1 align="center">
+Executando o projeto
+</h1>
 
 > Clone o projeto
 ```
 git clone https://github.com/leonardodossantos2012/ChallengeZe.git
 ```
-
-> Instale as dependencia do robot no seu terminal
-```
-cd C:\{PATH}\ChallengeZe
-pip3 install -r .\requirements.txt
-rfbrowser init
-webdrivermanager firefox chrome --linkpath /usr/local/bin
-```
-
-<h1 align="center">
-Executando o projeto
-</h1>
 
 Acessar a pasta do projeto e executar via CMD um comando de sua preferência:
 
