@@ -12,9 +12,9 @@ Acessar pagina inicial
     Get Text    ${TXT_HOW_IT_WORKS_TITLE}  ==  ${title}
 
 E que tenha preenchido uma região atendida pelo o Zé
-    [ARGUMENTS]  ${cep}  ${number}
+    [ARGUMENTS]     ${cep}  ${number}
     Fill Region     ${cep}
-    Search Region  ${INPUT_ADDRESS_DETAILS_NUMBER}
+    Search Region
     Fill Text  ${INPUT_ADDRESS_DETAILS_NUMBER}  ${number}
     Click  ${RB_COMPLEMENT}
 
@@ -23,8 +23,10 @@ E que tenha clicado no botao "ver produtos disponíveis"
 
 #Acoes
 Quando o usuario informa o cep
-    [ARGUMENTS]  ${CEP}
-    Fill Region  ${CEP}
+    [ARGUMENTS]     ${CEP}
+    Fill Region     ${CEP}
+    Search Region
+
 
 #Validacoes
 Então o usuario recebe a seguinte mensagem
@@ -38,10 +40,6 @@ Fill Region
     Click  ${INPUT_ADDRESS_FAKE_SEARCH}
     Fill Text  ${INPUT_ADDRESS_SEARCH}  ${cep}
 
-
 Search Region
-    [ARGUMENTS]  ${address_number}
     Wait For Elements State  ${TXT_GOOGLE_ADDRESS}
     Click  ${TXT_GOOGLE_ADDRESS}
-    Wait For Elements State   ${address_number}
-    Click  ${address_number}
